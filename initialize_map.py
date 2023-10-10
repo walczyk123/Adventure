@@ -26,19 +26,26 @@ class Building:
     self.size_x = size_x
     self.size_y = size_y
     self.tiles = self.randomize_building(size_x, size_y)
-  
-  def randomize_building(cls, building_size_x, building_size_y):
+
+  def randomize_building(self, building_size_x, building_size_y):
+    building_array = self.prepare_floor(building_size_x, building_size_y)
+    building_array = self.construct_walls(building_array, building_size_x, building_size_y)      
+    building_array = self.add_corners(building_array, building_size_x, building_size_y)
+    building_array = self.add_doors(building_array, building_size_x, building_size_y)
+
+    return building_array
+            
+  @staticmethod  
+  def prepare_floor(building_size_x, building_size_y):
     empty_floor = Tile("floor", ".", True)
-    door = Tile("door", "D", True)
+    
+    return [[empty_floor for col in range(building_size_x)] for row in range(building_size_y)]   
+      
+  @staticmethod  
+  def construct_walls(building_array, building_size_x, building_size_y):
     wall_horizontal = Tile("wall", "═", False)
     wall_vertical = Tile("wall", "║", False)
-    corner_left_top = Tile("wall", "╔", False)
-    corner_left_bottom = Tile("wall", "╚", False)
-    corner_right_top = Tile("wall", "╗", False)
-    corner_right_bottom = Tile("wall", "╝", False)
-
-    building_array = [[empty_floor for col in range(building_size_x)] for row in range(building_size_y)]
-
+    
     building_array[0] = [wall_horizontal] * building_size_x
     building_array[building_size_y - 1] = [wall_horizontal] * building_size_x
     
@@ -46,11 +53,25 @@ class Building:
       building_array[y + 1][0] = wall_vertical
       building_array[y + 1][building_size_x - 1] = wall_vertical
       
+    return building_array
+    
+  @staticmethod  
+  def add_corners(building_array, building_size_x, building_size_y):
+    corner_left_top = Tile("wall", "╔", False)
+    corner_left_bottom = Tile("wall", "╚", False)
+    corner_right_top = Tile("wall", "╗", False)
+    corner_right_bottom = Tile("wall", "╝", False)
+    
     building_array[0][0] = corner_left_top
     building_array[0][building_size_x - 1] = corner_right_top
     building_array[building_size_y - 1][0] = corner_left_bottom
     building_array[building_size_y - 1][building_size_x - 1] = corner_right_bottom
-
+    
+    return building_array
+    
+  @staticmethod  
+  def add_doors(building_array, building_size_x, building_size_y):
+    door = Tile("door", "D", True)
     doorable_walls = [[random.randint(1, building_size_x - 2),0],[random.randint(1, building_size_x - 2),building_size_y - 1],[0, random.randint(1, building_size_y - 2)],[building_size_x - 1, random.randint(1, building_size_y - 2)]]
     number_of_doors = random.randint(1,3)
     
@@ -58,19 +79,26 @@ class Building:
       wall_with_door = random.choice(doorable_walls)
       building_array[wall_with_door[1]][wall_with_door[0]] = door
     
-    return building_array     
-    
-def initialize_map(screen_size_x,screen_size_y):  
+    return building_array
+   
+def prepare_map():
+  add_map_boundaries()
+  spill_lakes()
+  seed_bushes()
+  plant_trees()
+  construct_buildings()
+  
+  return map_array
+
+def initialize_map():  
   print("....Creating map.....")
   time.sleep(0.5)
   
   empty_tile = Tile("grass", " ", True)
 
-  map_array = [[empty_tile for col in range(screen_size_x)] for row in range(screen_size_y)]
+  return [[empty_tile for col in range(screen_size_x)] for row in range(screen_size_y)]
   
-  return map_array
-  
-def add_map_boundaries(map_array, screen_size_x, screen_size_y):
+def add_map_boundaries():
   print("....Adding walls.....")
   time.sleep(0.1)
   
@@ -92,10 +120,8 @@ def add_map_boundaries(map_array, screen_size_x, screen_size_y):
   map_array[0][screen_size_x - 1] = corner_right_top
   map_array[screen_size_y - 1][0] = corner_left_bottom
   map_array[screen_size_y - 1][screen_size_x - 1] = corner_right_bottom
-
-  return map_array
   
-def spill_lakes(map_array, screen_size_x, screen_size_y, number_of_lakes, lake_size, lake_density):
+def spill_lakes():
   print("....Spilling lakes...")
   time.sleep(0.1)    
   
@@ -109,10 +135,8 @@ def spill_lakes(map_array, screen_size_x, screen_size_y, number_of_lakes, lake_s
        x = int(random.gauss(lake_size, lake_density/100)) + lake_x - int(lake_size/2)
        y = int(random.gauss(lake_size, lake_density/100)) + lake_y - int(lake_size/2)
        map_array[y][x] = lake_tile
-
-  return map_array
  
-def seed_bushes(map_array, screen_size_x, screen_size_y, number_of_bushes, bush_length):
+def seed_bushes():
   print("....Seeding bushes...")
   time.sleep(0.1)    
   
@@ -139,10 +163,8 @@ def seed_bushes(map_array, screen_size_x, screen_size_y, number_of_bushes, bush_
         
         if map_array[y][x].passable == True:
           map_array[y][x] = bush_tile 
-            
-  return map_array  
   
-def plant_trees(map_array, screen_size_x, screen_size_y, number_of_trees):
+def plant_trees():
   print("....Planting trees...")
   time.sleep(0.1)
   
@@ -154,11 +176,8 @@ def plant_trees(map_array, screen_size_x, screen_size_y, number_of_trees):
     
     if map_array[y][x].passable == True:
       map_array[y][x] = tree_tile
-  
-  return map_array
 
-def construct_buildings(map_array, screen_size_x, screen_size_y, number_of_buildings, min_building_size, max_building_size):
-
+def construct_buildings():
   print("....Making buildings.....")
   time.sleep(0.1)
  
@@ -174,10 +193,7 @@ def construct_buildings(map_array, screen_size_x, screen_size_y, number_of_build
       for x in range(building_width):
         map_array[building_y + y][building_x + x] = building[y][x]
 
-
-  return map_array
-
-def show_generated_map(map_array, screen_size_x, screen_size_y):
+def show_generated_map():
   final_map = ""
   
   for y in range(screen_size_y):
@@ -190,8 +206,8 @@ def show_generated_map(map_array, screen_size_x, screen_size_y):
     
   print(final_map)
 
-def show_map_statistics(map_array):
-  counted_objects = (count_objects(map_array))
+def show_map_statistics():
+  counted_objects = (count_objects())
   
   print("Generated objects:")
   
@@ -200,7 +216,7 @@ def show_map_statistics(map_array):
 
   programPause = input("Press the any key to start")
 
-def spawn_player(map_array, screen_size_x, screen_size_y):
+def spawn_player():
   while True:
     player_x = random.randint(2, screen_size_x - 2)
     player_y = random.randint(2, screen_size_y - 2)
@@ -209,7 +225,7 @@ def spawn_player(map_array, screen_size_x, screen_size_y):
         
   return Player("vinne","V", player_x, player_y)
   
-def update_map(temp_map, screen_size_x, screen_size_y, player):
+def update_map():
   temp_map[player.y][player.x] = player  
   
   final_map = ""
@@ -222,18 +238,19 @@ def update_map(temp_map, screen_size_x, screen_size_y, player):
     row = "".join(front_tiles)
     final_map = final_map + row + "\n"
   
-  
   os.system('cls')
   print(final_map)
 
-def count_objects(map_array):
-  # objects [grass, tree, bush, water, wall]
+def count_objects():
+  # objects [grass, tree, bush, water, wall, floor, door]
   objects = {
     "grass": 0,
     "trees": 0,
     "bushes": 0,
     "water": 0,
-    "walls": 0
+    "walls": 0,
+    "floor": 0,
+    "doors": 0
   }
   
   for row in map_array:
@@ -248,14 +265,18 @@ def count_objects(map_array):
       elif name == "water":
         objects["water"] += 1
       elif name == "wall":
-        objects["walls"] += 1
+        objects["walls"] += 1      
+      elif name == "floor":
+        objects["floor"] += 1    
+      elif name == "door":
+        objects["doors"] += 1
  
   return objects
 
 def copy_matrix(matrix):
   return [row[:] for row in matrix]
 
-def move_player(map_array, player):
+def move_player(player):
   direction = ""
   direction = input("move 'w' 's' 'a' 'd', get info by adding .info or quit: ")
 
@@ -291,14 +312,11 @@ def move_player(map_array, player):
   elif direction == "d.info":
     information = "You are looking at " + str(map_array[player.y][player.x + 1].name)
     input(information)   
-  #elif direction == "quit":
-    # add global variable and use it in while
     
 ## ======================= main program start =========================
 ## ========================== generate map ============================
-screen_size_x = 60
-screen_size_y = 20
-
+screen_size_x = 70
+screen_size_y = 24
 number_of_lakes = 7
 lake_size = 10
 lake_density = 75
@@ -309,25 +327,18 @@ number_of_buildings = 3
 min_building_size = 4
 max_building_size = 8
 
-map_array = initialize_map(screen_size_x, screen_size_y)
-map_array = add_map_boundaries(map_array, screen_size_x, screen_size_y)
-map_array = spill_lakes(map_array, screen_size_x, screen_size_y, number_of_lakes, lake_size, lake_density)
-map_array = seed_bushes(map_array, screen_size_x, screen_size_y, number_of_bushes, bush_length)
-map_array = plant_trees(map_array, screen_size_x, screen_size_y, number_of_trees)
-map_array = construct_buildings(map_array, screen_size_x, screen_size_y, number_of_buildings, min_building_size, max_building_size)
+map_array = initialize_map()
 
-
-show_generated_map(map_array, screen_size_x, screen_size_y)
-show_map_statistics(map_array)
+prepare_map()
+show_generated_map()
+show_map_statistics()
 
 temp_map = copy_matrix(map_array)
 
-player = spawn_player(temp_map, screen_size_x, screen_size_y)
-
-
+player = spawn_player()
 
 while True:
   temp_map = copy_matrix(map_array)
   
-  update_map(temp_map, screen_size_x, screen_size_y, player)
-  move_player(map_array, player)
+  update_map()
+  move_player(player)
