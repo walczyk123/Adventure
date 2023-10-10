@@ -1,0 +1,20 @@
+# common settings
+SCREEN_SIZE_X = 70
+SCREEN_SIZE_Y = 24
+
+# lakes settings
+NUMBER_OF_LAKES = 7
+LAKE_SIZE = 10
+LAKE_DENSITY = 75
+
+# bushes setting
+NUMBER_OF_BUSHES = 12
+BUSH_LENGTH = 15
+
+# trees settings
+NUMBER_OF_TREES = 270
+
+# buildings settings
+NUMBER_OF_BUILDINGS = 3
+MIN_BUILDING_SIZE = 4
+MAX_BUILDING_SIZE = 8
