@@ -296,8 +296,8 @@ def move_player(map_array, player):
     
 ## ======================= main program start =========================
 ## ========================== generate map ============================
-screen_size_x = 100
-screen_size_y = 24
+screen_size_x = 60
+screen_size_y = 20
 
 number_of_lakes = 7
 lake_size = 10
