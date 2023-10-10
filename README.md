@@ -1,24 +1,24 @@
 # Adventure
 ╔══════════════════════════════════════════════════════════╗\
-║&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;###&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;║\
-║&nbsp;&nbsp;&nbsp;♣♣####&nbsp;♣&nbsp;&nbsp;♣♣&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;♣&nbsp;&nbsp;&nbsp;&nbsp;##&nbsp;&nbsp;♣&nbsp;&nbsp;&nbsp;♣####&nbsp;&nbsp;&nbsp;&nbsp;♣&nbsp;♣&nbsp;&nbsp;&nbsp;&nbsp;♣&nbsp;&nbsp;&nbsp;&nbsp;♣║\
-║&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;##&nbsp;♣&nbsp;&nbsp;♣♣&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;♣♣♣♣&nbsp;#♣♣♣&nbsp;♣&nbsp;&nbsp;##&nbsp;&nbsp;&nbsp;&nbsp;♣&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;♣&nbsp;&nbsp;♣&nbsp;&nbsp;♣&nbsp;&nbsp;║\
-║&nbsp;♣&nbsp;&nbsp;&nbsp;♣&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;♣&nbsp;&nbsp;♣♣&nbsp;♣&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;♣&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;♣&nbsp;&nbsp;&nbsp;&nbsp;║\
-║&nbsp;&nbsp;♣&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;♣&nbsp;&nbsp;&nbsp;♣&nbsp;&nbsp;♣&nbsp;&nbsp;&nbsp;♣&nbsp;&nbsp;&nbsp;#&nbsp;&nbsp;≈≈≈&nbsp;&nbsp;≈≈≈≈&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;♣&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;♣&nbsp;&nbsp;♣&nbsp;║\
-║&nbsp;♣♣&nbsp;&nbsp;♣&nbsp;&nbsp;≈&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;♣♣♣&nbsp;&nbsp;&nbsp;≈≈≈≈≈≈♣≈≈≈≈≈&nbsp;&nbsp;♣♣&nbsp;&nbsp;♣&nbsp;♣&nbsp;♣♣♣&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;♣&nbsp;║\
-║&nbsp;&nbsp;&nbsp;♣&nbsp;&nbsp;♣≈&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;♣&nbsp;♣♣♣♣#&nbsp;♣≈≈≈≈≈≈≈≈≈≈≈≈&nbsp;&nbsp;♣&nbsp;&nbsp;&nbsp;♣♣&nbsp;&nbsp;&nbsp;♣♣&nbsp;♣♣♣♣♣&nbsp;&nbsp;&nbsp;&nbsp;║\
-║&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;≈≈≈≈&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;####♣≈≈≈≈≈╔═════╗&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;♣&nbsp;♣&nbsp;♣&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;║\
-║&nbsp;♣♣&nbsp;♣&nbsp;≈≈≈≈&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;♣&nbsp;######≈≈≈≈║.....║&nbsp;♣&nbsp;&nbsp;&nbsp;♣&nbsp;&nbsp;♣&nbsp;&nbsp;♣♣♣♣♣&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;♣♣║\
-║&nbsp;♣&nbsp;&nbsp;&nbsp;&nbsp;≈≈≈≈♣≈&nbsp;&nbsp;&nbsp;&nbsp;♣♣#♣≈###♣♣&nbsp;&nbsp;║.....D&nbsp;&nbsp;♣&nbsp;&nbsp;&nbsp;♣&nbsp;♣♣&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;♣&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;║\
-║&nbsp;&nbsp;♣&nbsp;♣♣♣≈≈≈≈≈≈♣&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;≈≈&nbsp;&nbsp;♣&nbsp;&nbsp;♣║.....║&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;╔═D╗♣♣&nbsp;♣&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;♣&nbsp;║\
-║&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;♣&nbsp;&nbsp;≈≈≈≈&nbsp;&nbsp;&nbsp;&nbsp;#≈≈≈≈&nbsp;♣&nbsp;&nbsp;&nbsp;║.....║#♣♣&nbsp;♣&nbsp;&nbsp;║..║&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;♣♣&nbsp;&nbsp;&nbsp;&nbsp;♣║\
-║&nbsp;♣&nbsp;&nbsp;&nbsp;♣♣&nbsp;##≈≈≈≈♣&nbsp;&nbsp;&nbsp;&nbsp;≈≈≈≈≈&nbsp;&nbsp;&nbsp;&nbsp;╚═══D═╝═══╗&nbsp;&nbsp;&nbsp;║..║&nbsp;&nbsp;♣♣&nbsp;&nbsp;♣&nbsp;&nbsp;&nbsp;♣&nbsp;║\
-║&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;###≈≈≈≈&nbsp;♣&nbsp;&nbsp;#≈≈♣&nbsp;#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;║....║&nbsp;&nbsp;&nbsp;║..║&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;║\
-║&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;&nbsp;♣♣&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;##&nbsp;&nbsp;♣&nbsp;&nbsp;&nbsp;║....║&nbsp;♣&nbsp;║..║♣&nbsp;&nbsp;&nbsp;&nbsp;♣♣&nbsp;&nbsp;&nbsp;♣&nbsp;║\
-║&nbsp;&nbsp;&nbsp;&nbsp;♣&nbsp;&nbsp;&nbsp;&nbsp;##♣&nbsp;&nbsp;&nbsp;&nbsp;♣&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;###&nbsp;&nbsp;&nbsp;&nbsp;♣&nbsp;║....D&nbsp;♣♣╚══╝&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;♣&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;║\
-║&nbsp;♣♣&nbsp;&nbsp;&nbsp;♣♣####&nbsp;&nbsp;&nbsp;♣&nbsp;&nbsp;&nbsp;&nbsp;♣&nbsp;&nbsp;&nbsp;##&nbsp;♣&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;╚══D═╝&nbsp;&nbsp;♣&nbsp;♣&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;♣&nbsp;&nbsp;♣♣&nbsp;♣&nbsp;♣║\
-║&nbsp;&nbsp;&nbsp;♣&nbsp;&nbsp;♣&nbsp;&nbsp;#&nbsp;#&nbsp;&nbsp;♣♣&nbsp;&nbsp;&nbsp;♣&nbsp;♣&nbsp;&nbsp;&nbsp;♣&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;♣&nbsp;♣♣&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;♣&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;♣&nbsp;&nbsp;&nbsp;║\
-╚══════════════════════════════════════════════════════════╝\
+║     ###                     #          #                 ║\
+║   ♣♣#### ♣  ♣♣        ♣    ##  ♣   ♣####    ♣ ♣    ♣    ♣║\
+║      ## ♣  ♣♣          ♣♣♣♣ #♣♣♣ ♣  ##    ♣     ♣  ♣  ♣  ║\
+║ ♣   ♣          ♣  ♣♣ ♣                  ♣           ♣    ║\
+║  ♣     ♣   ♣  ♣   ♣   #  ≈≈≈  ≈≈≈≈       ♣          ♣  ♣ ║\
+║ ♣♣  ♣  ≈         ♣♣♣   ≈≈≈≈≈≈♣≈≈≈≈≈  ♣♣  ♣ ♣ ♣♣♣       ♣ ║\
+║   ♣  ♣≈      ♣ ♣♣♣♣# ♣≈≈≈≈≈≈≈≈≈≈≈≈  ♣   ♣♣   ♣♣ ♣♣♣♣♣    ║\
+║      ≈≈≈≈        ####♣≈≈≈≈≈╔═════╗       ♣ ♣ ♣           ║\
+║ ♣♣ ♣ ≈≈≈≈      ♣ ######≈≈≈≈║.....║ ♣   ♣  ♣  ♣♣♣♣♣     ♣♣║\
+║ ♣    ≈≈≈≈♣≈    ♣♣#♣≈###♣♣  ║.....D  ♣   ♣ ♣♣      ♣      ║\
+║  ♣ ♣♣♣≈≈≈≈≈≈♣      ≈≈  ♣  ♣║.....║       ╔═D╗♣♣ ♣      ♣ ║\
+║       ♣  ≈≈≈≈    #≈≈≈≈ ♣   ║.....║#♣♣ ♣  ║..║     ♣♣    ♣║\
+║ ♣   ♣♣ ##≈≈≈≈♣    ≈≈≈≈≈    ╚═══D═╝═══╗   ║..║  ♣♣  ♣   ♣ ║\
+║        ###≈≈≈≈ ♣  #≈≈♣ #        ║....║   ║..║            ║\
+║         #  ♣♣     #     ##  ♣   ║....║ ♣ ║..║♣    ♣♣   ♣ ║\
+║    ♣    ##♣    ♣       ###    ♣ ║....D ♣♣╚══╝      ♣     ║\
+║ ♣♣   ♣♣####   ♣    ♣   ## ♣     ╚══D═╝  ♣ ♣     ♣  ♣♣ ♣ ♣║\
+║   ♣  ♣  # #  ♣♣   ♣ ♣   ♣       ♣ ♣♣     ♣           ♣   ║\
+╚══════════════════════════════════════════════════════════╝
 
 ### Technology:
  - Python 3
