@@ -296,16 +296,16 @@ def move_player(map_array, player):
     
 ## ======================= main program start =========================
 ## ========================== generate map ============================
-screen_size_x = 60
-screen_size_y = 22
+screen_size_x = 100
+screen_size_y = 24
 
 number_of_lakes = 7
 lake_size = 10
 lake_density = 75
 number_of_bushes = 12
 bush_length = 15
-number_of_trees = 250
-number_of_buildings = 2
+number_of_trees = 270
+number_of_buildings = 3
 min_building_size = 4
 max_building_size = 8
 
