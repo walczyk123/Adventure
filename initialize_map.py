@@ -2,6 +2,7 @@ import os # pause
 import numpy # math
 import random # random numbers
 import time #sleep
+import config
 
 class Tile:
         
@@ -96,7 +97,7 @@ def initialize_map():
   
   empty_tile = Tile("grass", " ", True)
 
-  return [[empty_tile for col in range(screen_size_x)] for row in range(screen_size_y)]
+  return [[empty_tile for col in range(config.SCREEN_SIZE_X)] for row in range(config.SCREEN_SIZE_Y)]
   
 def add_map_boundaries():
   print("....Adding walls.....")
@@ -109,17 +110,17 @@ def add_map_boundaries():
   corner_right_top = Tile("wall", "╗", False)
   corner_right_bottom = Tile("wall", "╝", False)
   
-  map_array[0] = [wall_horizontal] * screen_size_x
-  map_array[screen_size_y - 1] = [wall_horizontal] * screen_size_x
+  map_array[0] = [wall_horizontal] * config.SCREEN_SIZE_X
+  map_array[config.SCREEN_SIZE_Y - 1] = [wall_horizontal] * config.SCREEN_SIZE_X
   
-  for y in range(screen_size_y - 2 ):
+  for y in range(config.SCREEN_SIZE_Y - 2 ):
     map_array[y + 1][0] = wall_vertical
-    map_array[y + 1][screen_size_x - 1] = wall_vertical
+    map_array[y + 1][config.SCREEN_SIZE_X - 1] = wall_vertical
     
   map_array[0][0] = corner_left_top
-  map_array[0][screen_size_x - 1] = corner_right_top
-  map_array[screen_size_y - 1][0] = corner_left_bottom
-  map_array[screen_size_y - 1][screen_size_x - 1] = corner_right_bottom
+  map_array[0][config.SCREEN_SIZE_X - 1] = corner_right_top
+  map_array[config.SCREEN_SIZE_Y - 1][0] = corner_left_bottom
+  map_array[config.SCREEN_SIZE_Y - 1][config.SCREEN_SIZE_X - 1] = corner_right_bottom
   
 def spill_lakes():
   print("....Spilling lakes...")
@@ -127,13 +128,13 @@ def spill_lakes():
   
   lake_tile = Tile("water", "≈", False)
  
-  for lake in range(number_of_lakes):
-    lake_x = random.randint(2, (screen_size_x - lake_size) - 2)
-    lake_y = random.randint(2, (screen_size_y - lake_size) - 2)
+  for lake in range(config.NUMBER_OF_LAKES):
+    lake_x = random.randint(2, (config.SCREEN_SIZE_X - config.LAKE_SIZE) - 2)
+    lake_y = random.randint(2, (config.SCREEN_SIZE_Y - config.LAKE_SIZE) - 2)
     
-    for tile in range(lake_density):
-       x = int(random.gauss(lake_size, lake_density/100)) + lake_x - int(lake_size/2)
-       y = int(random.gauss(lake_size, lake_density/100)) + lake_y - int(lake_size/2)
+    for tile in range(config.LAKE_DENSITY):
+       x = int(random.gauss(config.LAKE_SIZE, config.LAKE_DENSITY/100)) + lake_x - int(config.LAKE_SIZE/2)
+       y = int(random.gauss(config.LAKE_SIZE, config.LAKE_DENSITY/100)) + lake_y - int(config.LAKE_SIZE/2)
        map_array[y][x] = lake_tile
  
 def seed_bushes():
@@ -143,22 +144,22 @@ def seed_bushes():
   bush_tile = Tile("bush", "#", False)
   bush_spread = [-1,0,0,0,0,1]
  
-  for bush_source in range(number_of_bushes):
-    bush_x = random.randint(2, (screen_size_x - 3))
-    bush_y = random.randint(2, (screen_size_y - 3))
+  for bush_source in range(config.NUMBER_OF_BUSHES):
+    bush_x = random.randint(2, (config.SCREEN_SIZE_X - 3))
+    bush_y = random.randint(2, (config.SCREEN_SIZE_Y - 3))
     
     horizontal = bool(random.getrandbits(1))
     
     if (horizontal == True):
-      for bush in range(bush_length):
-        x = int(random.gauss(bush_length, 1) + bush_x - bush_length)
+      for bush in range(config.BUSH_LENGTH):
+        x = int(random.gauss(config.BUSH_LENGTH, 1) + bush_x - config.BUSH_LENGTH)
         y = bush_y + random.choice(bush_spread)
         
         if map_array[y][x].passable == True:
           map_array[y][x] = bush_tile 
     else:
-      for bush in range(bush_length):
-        y = int(random.gauss(bush_length, 1) + bush_y - bush_length)
+      for bush in range(config.BUSH_LENGTH):
+        y = int(random.gauss(config.BUSH_LENGTH, 1) + bush_y - config.BUSH_LENGTH)
         x = bush_x + random.choice(bush_spread)
         
         if map_array[y][x].passable == True:
@@ -170,9 +171,9 @@ def plant_trees():
   
   tree_tile = Tile("tree", "♣", False)
  
-  for tree in range(number_of_trees):
-    x = random.randint(2, screen_size_x - 2)
-    y = random.randint(2, screen_size_y - 2)
+  for tree in range(config.NUMBER_OF_TREES):
+    x = random.randint(2, config.SCREEN_SIZE_X - 2)
+    y = random.randint(2, config.SCREEN_SIZE_Y - 2)
     
     if map_array[y][x].passable == True:
       map_array[y][x] = tree_tile
@@ -181,12 +182,12 @@ def construct_buildings():
   print("....Making buildings.....")
   time.sleep(0.1)
  
-  for construction in range(number_of_buildings):
-    building_width = random.randint(min_building_size,max_building_size)
-    building_height = random.randint(min_building_size,max_building_size)
+  for construction in range(config.NUMBER_OF_BUILDINGS):
+    building_width = random.randint(config.MIN_BUILDING_SIZE,config.MIN_BUILDING_SIZE)
+    building_height = random.randint(config.MIN_BUILDING_SIZE,config.MIN_BUILDING_SIZE)
     
-    building_x = random.randint(2, screen_size_x - building_width - 1)
-    building_y = random.randint(2, screen_size_y - building_height - 1)
+    building_x = random.randint(2, config.SCREEN_SIZE_X - building_width - 1)
+    building_y = random.randint(2, config.SCREEN_SIZE_Y - building_height - 1)
 
     building = Building("Home","H",building_width,building_height).tiles
     for y in range(building_height):
@@ -196,7 +197,7 @@ def construct_buildings():
 def show_generated_map():
   final_map = ""
   
-  for y in range(screen_size_y):
+  for y in range(config.SCREEN_SIZE_Y):
     front_tiles = []
     for node in map_array[y]:
       front_tiles.append(node.front)
@@ -207,7 +208,7 @@ def show_generated_map():
   print(final_map)
 
 def show_map_statistics():
-  counted_objects = (count_objects())
+  counted_objects = count_objects()
   
   print("Generated objects:")
   
@@ -218,8 +219,8 @@ def show_map_statistics():
 
 def spawn_player():
   while True:
-    player_x = random.randint(2, screen_size_x - 2)
-    player_y = random.randint(2, screen_size_y - 2)
+    player_x = random.randint(2, config.SCREEN_SIZE_X - 2)
+    player_y = random.randint(2, config.SCREEN_SIZE_Y - 2)
     if map_array[player_y][player_x].passable == True:
         break
         
@@ -230,7 +231,7 @@ def update_map():
   
   final_map = ""
   
-  for y in range(screen_size_y):
+  for y in range(config.SCREEN_SIZE_Y):
     front_tiles = []
     for node in temp_map[y]:
       front_tiles.append(node.front)
@@ -315,20 +316,8 @@ def move_player(player):
     
 ## ======================= main program start =========================
 ## ========================== generate map ============================
-screen_size_x = 70
-screen_size_y = 24
-number_of_lakes = 7
-lake_size = 10
-lake_density = 75
-number_of_bushes = 12
-bush_length = 15
-number_of_trees = 270
-number_of_buildings = 3
-min_building_size = 4
-max_building_size = 8
 
 map_array = initialize_map()
-
 prepare_map()
 show_generated_map()
 show_map_statistics()
